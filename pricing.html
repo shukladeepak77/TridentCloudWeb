@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pricing – Trident CloudNet Solutions</title>
+<meta name="description" content="Simple, transparent pricing starting at $1,499/mo. No hidden fees. No long-term lock-in. Starter, Growth, and Enterprise plans."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 36 36" fill="none">
+      <rect width="36" height="36" rx="9" fill="#1565C0"/>
+      <circle cx="9" cy="18" r="3.5" fill="white" opacity=".9"/>
+      <circle cx="27" cy="18" r="3.5" fill="white" opacity=".9"/>
+      <circle cx="18" cy="10" r="3.5" fill="white"/>
+      <circle cx="18" cy="26" r="3.5" fill="white"/>
+      <line x1="9" y1="18" x2="18" y2="10" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="9" y1="18" x2="18" y2="26" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="27" y1="18" x2="18" y2="10" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="27" y1="18" x2="18" y2="26" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="9" y1="18" x2="27" y2="18" stroke="white" stroke-width="1.5" stroke-dasharray="2.5 2.5" opacity=".4"/>
+    </svg>
+    <span class="nav-logo-text">Trident <span>CloudNet</span> Solutions</span>
+  </a>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="index.html#how">How it works</a>
+    <a href="pricing.html" class="active">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Free audit →</a>
+  </div>
+  <div class="nav-hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Pricing</div>
+    <h1>Simple, transparent plans</h1>
+    <p>No hidden fees. No long-term lock-in. Start small and scale as you grow — or talk to us about a custom plan.</p>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <span>Pricing</span>
+  </div>
+</div>
+
+<!-- PRICING CARDS -->
+<section>
+  <div class="section-inner">
+    <div class="pricing-grid">
+
+      <!-- Starter -->
+      <div class="price-card">
+        <div class="price-tier">Starter</div>
+        <div class="price-amount"><sup>$</sup>1,499</div>
+        <div class="price-period">per month, billed monthly</div>
+        <div class="price-desc">Best for teams up to 25 users. Business hours IT support with AI assistance.</div>
+        <ul class="price-features">
+          <li>Up to 25 users</li>
+          <li>Business hours support (8am–6pm local)</li>
+          <li>AI helpdesk chatbot (24/7)</li>
+          <li>L1/L2 India team support</li>
+          <li>Network uptime monitoring</li>
+          <li>Monthly health report</li>
+          <li>4-hour response SLA</li>
+          <li>Email &amp; portal ticketing</li>
+          <li>Onboarding assistance</li>
+          <li class="na">L3 senior engineer access</li>
+          <li class="na">Cloud infrastructure support</li>
+          <li class="na">Dedicated account manager</li>
+        </ul>
+        <a href="contact.html" class="btn-outline">Get started</a>
+        <p style="font-size:12px;color:var(--gray-400);text-align:center;margin-top:10px">No setup fee · Cancel anytime</p>
+      </div>
+
+      <!-- Growth (Featured) -->
+      <div class="price-card featured">
+        <div class="price-popular">Most popular</div>
+        <div class="price-tier">Growth</div>
+        <div class="price-amount"><sup>$</sup>3,499</div>
+        <div class="price-period">per month, billed monthly</div>
+        <div class="price-desc">For growing teams up to 75 users who need extended coverage and senior engineering access.</div>
+        <ul class="price-features">
+          <li>Up to 75 users</li>
+          <li>16/7 coverage (extended hours)</li>
+          <li>AI helpdesk chatbot (24/7)</li>
+          <li>L1/L2/L3 US &amp; India team</li>
+          <li>Network + cloud monitoring</li>
+          <li>Weekly health report</li>
+          <li>2-hour response SLA</li>
+          <li>Incident response coverage</li>
+          <li>Cloud infrastructure support (AWS/Azure/GCP)</li>
+          <li>Quarterly architecture review</li>
+          <li>Priority escalation path</li>
+          <li class="na">Dedicated account manager</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Get started</a>
+        <p style="font-size:12px;color:var(--gray-400);text-align:center;margin-top:10px">No setup fee · Cancel anytime</p>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="price-card">
+        <div class="price-tier">Enterprise</div>
+        <div class="price-amount"><sup>$</sup>7,999</div>
+        <div class="price-period">per month, billed monthly</div>
+        <div class="price-desc">Unlimited users, full 24/7 coverage, and a dedicated account manager for your business.</div>
+        <ul class="price-features">
+          <li>Unlimited users</li>
+          <li>24/7 full coverage (US + India)</li>
+          <li>AI helpdesk chatbot (24/7)</li>
+          <li>Dedicated L3 engineer pool</li>
+          <li>Full infrastructure monitoring</li>
+          <li>Daily / weekly health reports</li>
+          <li>30-minute response SLA (P1/P2)</li>
+          <li>Full incident response ownership</li>
+          <li>Cloud operations + FinOps</li>
+          <li>Dedicated account manager</li>
+          <li>Staff augmentation credits (4 hrs/mo)</li>
+          <li>White-glove onboarding</li>
+        </ul>
+        <a href="contact.html" class="btn-outline">Contact us</a>
+        <p style="font-size:12px;color:var(--gray-400);text-align:center;margin-top:10px">Custom SLAs available</p>
+      </div>
+
+    </div>
+
+    <!-- Add-ons callout -->
+    <div style="background:var(--blue-pale);border:1px solid rgba(21,101,192,0.15);border-radius:var(--radius);padding:28px 36px;margin-top:36px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+      <div>
+        <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px">Need something custom?</div>
+        <div style="font-size:14px;color:var(--gray-600)">Staff augmentation, project-based DevOps, or a plan that doesn't fit the boxes above — we'll build it.</div>
+      </div>
+      <a href="contact.html" class="btn-primary" style="white-space:nowrap">Talk to us →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE COMPARISON TABLE -->
+<section style="background:var(--gray-100)">
+  <div class="section-inner">
+    <div class="section-eyebrow">Compare</div>
+    <h2 class="section-title">Full feature comparison</h2>
+    <p class="section-sub">See exactly what's included in each plan before you decide.</p>
+
+    <div style="overflow-x:auto">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:40%">Feature</th>
+            <th style="text-align:center">Starter<br><span style="font-weight:400;font-size:12px;opacity:.8">$1,499/mo</span></th>
+            <th style="text-align:center;background:#1565C0">Growth ★<br><span style="font-weight:400;font-size:12px;opacity:.8">$3,499/mo</span></th>
+            <th style="text-align:center">Enterprise<br><span style="font-weight:400;font-size:12px;opacity:.8">$7,999/mo</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="4" style="background:var(--navy);color:rgba(255,255,255,0.6);font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:8px 18px">Coverage</td></tr>
+          <tr><td>User seats</td><td style="text-align:center">25</td><td style="text-align:center">75</td><td style="text-align:center">Unlimited</td></tr>
+          <tr><td>Support hours</td><td style="text-align:center">8am–6pm</td><td style="text-align:center">16/7</td><td style="text-align:center">24/7</td></tr>
+          <tr><td>Time zones covered</td><td style="text-align:center">1</td><td style="text-align:center">US + India</td><td style="text-align:center">US + India</td></tr>
+          <tr><td colspan="4" style="background:var(--navy);color:rgba(255,255,255,0.6);font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:8px 18px">Support tiers</td></tr>
+          <tr><td>AI helpdesk (24/7)</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td></tr>
+          <tr><td>L1/L2 India engineers</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td></tr>
+          <tr><td>L3 senior US engineers</td><td style="text-align:center" class="dash">–</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td></tr>
+          <tr><td>Dedicated account manager</td><td style="text-align:center" class="dash">–</td><td style="text-align:center" class="dash">–</td><td style="text-align:center" class="check">✓</td></tr>
+          <tr><td colspan="4" style="background:var(--navy);color:rgba(255,255,255,0.6);font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:8px 18px">SLAs</td></tr>
+          <tr><td>P1 (critical) response</td><td style="text-align:center">4 hours</td><td style="text-align:center">1 hour</td><td style="text-align:center">30 min</td></tr>
+          <tr><td>P2 (high) response</td><td style="text-align:center">4 hours</td><td style="text-align:center">2 hours</td><td style="text-align:center">1 hour</td></tr>
+          <tr><td>P3/P4 response</td><td style="text-align:center">Next day</td><td style="text-align:center">4 hours</td><td style="text-align:center">2 hours</td></tr>
+          <tr><td colspan="4" style="background:var(--navy);color:rgba(255,255,255,0.6);font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:8px 18px">Monitoring &amp; reporting</td></tr>
+          <tr><td>Network uptime monitoring</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td></tr>
+          <tr><td>Cloud infrastructure monitoring</td><td style="text-align:center" class="dash">–</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td></tr>
+          <tr><td>Health report frequency</td><td style="text-align:center">Monthly</td><td style="text-align:center">Weekly</td><td style="text-align:center">Daily / Weekly</td></tr>
+          <tr><td>Root cause analysis reports</td><td style="text-align:center" class="dash">–</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td></tr>
+          <tr><td colspan="4" style="background:var(--navy);color:rgba(255,255,255,0.6);font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:8px 18px">Cloud &amp; DevOps</td></tr>
+          <tr><td>Cloud ops (AWS/Azure/GCP)</td><td style="text-align:center" class="dash">–</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td></tr>
+          <tr><td>Architecture review</td><td style="text-align:center" class="dash">–</td><td style="text-align:center">Quarterly</td><td style="text-align:center">Monthly</td></tr>
+          <tr><td>FinOps / cost optimization</td><td style="text-align:center" class="dash">–</td><td style="text-align:center" class="check">✓</td><td style="text-align:center" class="check">✓</td></tr>
+          <tr><td>Staff augmentation credits</td><td style="text-align:center" class="dash">–</td><td style="text-align:center" class="dash">–</td><td style="text-align:center">4 hrs/mo</td></tr>
+          <tr><td>Custom SLAs</td><td style="text-align:center" class="dash">–</td><td style="text-align:center" class="dash">–</td><td style="text-align:center" class="check">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ON RATES -->
+<section>
+  <div class="section-inner">
+    <div class="section-eyebrow">Add-ons</div>
+    <h2 class="section-title">Staff augmentation rates</h2>
+    <p class="section-sub">Need extra engineers for a project or to fill a gap? Our engineers are available on-demand on top of any plan.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div style="background:var(--gray-100);border-radius:var(--radius);padding:28px">
+        <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">🇮🇳 India engineers</div>
+        <div style="font-size:32px;font-weight:700;color:var(--navy);font-family:'DM Serif Display',serif">$28–$38<span style="font-size:16px;font-weight:400;color:var(--gray-600)">/hr</span></div>
+        <div style="font-size:13px;color:var(--gray-600);margin-top:8px;line-height:1.7">L1/L2 helpdesk, NOC, network admin, cloud support. Ideal for overnight coverage and cost-efficient scale.</div>
+      </div>
+      <div style="background:var(--gray-100);border-radius:var(--radius);padding:28px">
+        <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">🇺🇸 US engineers (L2–L3)</div>
+        <div style="font-size:32px;font-weight:700;color:var(--navy);font-family:'DM Serif Display',serif">$65–$85<span style="font-size:16px;font-weight:400;color:var(--gray-600)">/hr</span></div>
+        <div style="font-size:13px;color:var(--gray-600);margin-top:8px;line-height:1.7">Networking, cloud, and systems engineers. On-site or remote. CCNP, AWS SA, and more.</div>
+      </div>
+      <div style="background:var(--gray-100);border-radius:var(--radius);padding:28px">
+        <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">🇺🇸 US senior / architect</div>
+        <div style="font-size:32px;font-weight:700;color:var(--navy);font-family:'DM Serif Display',serif">$95–$145<span style="font-size:16px;font-weight:400;color:var(--gray-600)">/hr</span></div>
+        <div style="font-size:13px;color:var(--gray-600);margin-top:8px;line-height:1.7">L3 senior engineers, cloud architects, DevOps leads, and security specialists for complex projects.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--gray-100)">
+  <div class="section-inner">
+    <div class="section-eyebrow">FAQ</div>
+    <h2 class="section-title">Pricing questions, answered</h2>
+    <p class="section-sub">Everything you need to know before signing up.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is there a setup fee or long-term contract? <span class="icon">+</span></div>
+        <div class="faq-a">No setup fee and no long-term contract. All plans are billed month-to-month. You can cancel or change plans with 30 days' notice. We earn your business every month.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens if I go over my user seat count? <span class="icon">+</span></div>
+        <div class="faq-a">We'll reach out to discuss upgrading your plan before it becomes a problem. We won't shut you off — we'll work with you to find the right fit. Enterprise plans have no seat limit.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I mix US and India engineers? <span class="icon">+</span></div>
+        <div class="faq-a">Yes. Our Growth and Enterprise plans include both teams by default. You benefit from India's cost-effective overnight coverage and US senior engineers during business hours — all under one SLA.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How does the free network audit work? <span class="icon">+</span></div>
+        <div class="faq-a">It's a 30-minute call with a senior engineer. We review your current setup, identify gaps, and give you an honest assessment of what's working and what isn't. No obligation. We won't pressure you into a plan.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I add staff augmentation hours to any plan? <span class="icon">+</span></div>
+        <div class="faq-a">Yes. Staff augmentation is available as an add-on to any plan at the hourly rates listed above. Enterprise plans include 4 complimentary hours per month. For larger needs, we can structure a retainer.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer discounts for annual billing? <span class="icon">+</span></div>
+        <div class="faq-a">Yes — we offer a 10% discount for annual pre-payment. Contact us to set up annual billing on any plan.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What ticketing system do you use? Can it integrate with ours? <span class="icon">+</span></div>
+        <div class="faq-a">We use our own client portal by default, but we integrate with ServiceNow, Jira Service Desk, Freshdesk, and Zendesk. We can also work within your existing system if preferred.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my data and environment information kept confidential? <span class="icon">+</span></div>
+        <div class="faq-a">Absolutely. We sign a mutual NDA before onboarding. All engineers operate under strict confidentiality agreements, and we follow SOC 2-aligned data handling practices. We never share client information with third parties.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="section-eyebrow" style="color:#00B4D8">Get started</div>
+    <h2>Start with a free audit,<br>no credit card required</h2>
+    <p>Talk to a senior engineer first. We'll help you figure out the right plan for your team — or tell you honestly if you don't need us yet.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn-white">Book your free audit →</a>
+      <a href="services.html" class="btn-ghost">Explore services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Trident <span>CloudNet</span> Solutions</h3>
+        <p>Smart IT support for growing businesses. Human expertise meets AI efficiency — across the US and India, around the clock.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="services.html">Network monitoring</a>
+        <a href="services.html">Cloud operations</a>
+        <a href="services.html">AI helpdesk</a>
+        <a href="services.html">Staff augmentation</a>
+        <a href="services.html">Incident response</a>
+        <a href="services.html#testing">Testing services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About us</a>
+        <a href="index.html#how">How it works</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@tridentcloudnet.com">hello@tridentcloudnet.com</a>
+        <a href="tel:+18005555555">+1 (800) 555-5555</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter / X</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Trident CloudNet Solutions. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div class="chat-header-info">
+        <h4>Trident CloudNet AI Support</h4>
+        <p>Typically replies in seconds</p>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">Have pricing questions? I'm here to help. 👋</div>
+    </div>
+    <div class="chat-quick" id="quickBtns">
+      <button class="chat-quick-btn" onclick="quickMsg('What services do you offer?')">Services</button>
+      <button class="chat-quick-btn" onclick="quickMsg('Book a free audit')">Free audit</button>
+      <button class="chat-quick-btn" onclick="quickMsg('Do you offer staff augmentation?')">Staffing</button>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="handleKey(event)"/>
+      <button class="chat-send" onclick="sendMsg()">
+        <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-btn" onclick="toggleChat()" title="Chat with us">💬</button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trident CloudNet Solutions – Smart IT Support, Always On</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0A1F44;
+    --blue: #1565C0;
+    --blue-light: #1976D2;
+    --blue-pale: #E3F0FF;
+    --accent: #00B4D8;
+    --white: #FFFFFF;
+    --gray-100: #F7F9FC;
+    --gray-200: #EEF2F7;
+    --gray-400: #9AA5B4;
+    --gray-600: #4A5568;
+    --gray-900: #1A202C;
+    --green: #22C55E;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 24px rgba(10,31,68,0.08);
+    --shadow-md: 0 8px 40px rgba(10,31,68,0.13);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--gray-900); background: var(--white); font-size: 16px; line-height: 1.7; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%; height: 68px;
+    background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(21,101,192,0.1);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo svg { width: 36px; height: 36px; }
+  .nav-logo-text { font-size: 18px; font-weight: 600; color: var(--navy); }
+  .nav-logo-text span { color: var(--blue); }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a { text-decoration: none; font-size: 14px; color: var(--gray-600); font-weight: 400; transition: color .2s; }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta { background: var(--blue); color: #fff; padding: 9px 20px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; text-decoration: none; transition: background .2s, transform .1s; display: inline-block; }
+  .nav-cta:hover { background: var(--blue-light); transform: translateY(-1px); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { width: 22px; height: 2px; background: var(--gray-900); border-radius: 2px; }
+
+  /* HERO */
+  .hero {
+    min-height: 88vh; display: flex; align-items: center;
+    padding: 80px 5% 80px;
+    background: linear-gradient(135deg, #f0f6ff 0%, #ffffff 50%, #e8f4fb 100%);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(21,101,192,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; width: 100%; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-pale); border: 1px solid rgba(21,101,192,0.2); border-radius: 20px; padding: 6px 16px; font-size: 13px; color: var(--blue); margin-bottom: 24px; font-weight: 500; }
+  .hero-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)} }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 4.5vw, 56px); line-height: 1.15; color: var(--navy); margin-bottom: 20px; }
+  .hero h1 em { font-style: italic; color: var(--blue); }
+  .hero-sub { font-size: 17px; color: var(--gray-600); max-width: 480px; margin-bottom: 36px; line-height: 1.8; font-weight: 300; }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+  .btn-primary { background: var(--blue); color: #fff; padding: 14px 28px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; transition: all .2s; display: inline-block; border: none; cursor: pointer; }
+  .btn-primary:hover { background: var(--blue-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(21,101,192,0.3); }
+  .btn-outline { background: transparent; color: var(--navy); padding: 14px 28px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; border: 1.5px solid rgba(10,31,68,0.2); transition: all .2s; display: inline-block; cursor: pointer; }
+  .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+  .hero-trust { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .hero-flag-chip { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--gray-600); }
+  .hero-flag-chip .flag { font-size: 18px; }
+  .hero-divider { color: var(--gray-400); }
+
+  /* HERO VISUAL */
+  .hero-visual { position: relative; }
+  .hero-card-main {
+    background: var(--white); border-radius: var(--radius); padding: 28px;
+    box-shadow: var(--shadow-md); border: 1px solid rgba(21,101,192,0.1);
+  }
+  .hero-card-main h3 { font-size: 13px; font-weight: 500; color: var(--gray-600); margin-bottom: 20px; text-transform: uppercase; letter-spacing: .8px; }
+  .ticket-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--gray-200); }
+  .ticket-item:last-child { border: none; }
+  .ticket-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dot-green { background: var(--green); }
+  .dot-blue { background: var(--blue); }
+  .dot-orange { background: #F59E0B; }
+  .ticket-info { flex: 1; }
+  .ticket-title { font-size: 13px; font-weight: 500; color: var(--gray-900); }
+  .ticket-sub { font-size: 11px; color: var(--gray-400); }
+  .ticket-badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+  .badge-ai { background: #E0F2FE; color: #0369A1; }
+  .badge-human { background: #D1FAE5; color: #065F46; }
+  .badge-open { background: #FEF3C7; color: #92400E; }
+  .hero-card-float {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--navy); border-radius: var(--radius-sm); padding: 16px 20px;
+    color: white; min-width: 180px; box-shadow: var(--shadow-md);
+  }
+  .hero-card-float .stat-num { font-size: 28px; font-weight: 600; color: var(--accent); }
+  .hero-card-float .stat-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+  .hero-card-float2 {
+    position: absolute; top: -24px; left: -24px;
+    background: var(--green); border-radius: var(--radius-sm); padding: 12px 16px;
+    color: white; box-shadow: var(--shadow);
+  }
+  .hero-card-float2 .float-text { font-size: 12px; font-weight: 500; }
+  .hero-card-float2 .float-sub { font-size: 11px; opacity: 0.85; }
+
+  /* STATS BAR */
+  .stats-bar { background: var(--navy); padding: 40px 5%; }
+  .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; }
+  .stat-box { text-align: center; padding: 0 24px; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat-box:last-child { border: none; }
+  .stat-box-num { font-size: 36px; font-weight: 600; color: var(--accent); font-family: 'DM Serif Display', serif; }
+  .stat-box-label { font-size: 13px; color: rgba(255,255,255,0.65); margin-top: 4px; }
+
+  /* SECTIONS */
+  section { padding: 96px 5%; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-eyebrow { font-size: 12px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 3vw, 42px); color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+  .section-sub { font-size: 16px; color: var(--gray-600); max-width: 520px; line-height: 1.8; margin-bottom: 56px; font-weight: 300; }
+
+  /* SERVICES */
+  .services-bg { background: var(--gray-100); }
+  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .service-card { background: var(--white); border-radius: var(--radius); padding: 28px; border: 1px solid rgba(21,101,192,0.08); transition: all .25s; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(21,101,192,0.2); }
+  .service-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+  .service-card h3 { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+  .service-card p { font-size: 14px; color: var(--gray-600); line-height: 1.7; }
+  .service-tag { display: inline-block; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 10px; margin-top: 14px; }
+
+  /* HOW IT WORKS */
+  .how-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; position: relative; }
+  .how-grid::before {
+    content: ''; position: absolute; top: 28px; left: 60px; right: 60px; height: 2px;
+    background: repeating-linear-gradient(90deg, var(--blue) 0, var(--blue) 8px, transparent 8px, transparent 16px);
+    opacity: 0.25; z-index: 0;
+  }
+  .how-step { background: var(--white); border-radius: var(--radius); padding: 28px 22px; border: 1px solid rgba(21,101,192,0.08); position: relative; z-index: 1; text-align: center; }
+  .how-num { width: 44px; height: 44px; border-radius: 50%; background: var(--blue); color: white; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+  .how-step h3 { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+  .how-step p { font-size: 13px; color: var(--gray-600); line-height: 1.7; }
+
+  /* AI STACK */
+  .ai-bg { background: var(--navy); }
+  .ai-bg .section-title { color: var(--white); }
+  .ai-bg .section-sub { color: rgba(255,255,255,0.65); }
+  .ai-bg .section-eyebrow { color: var(--accent); }
+  .ai-flow { display: flex; align-items: center; gap: 0; margin-bottom: 56px; flex-wrap: wrap; }
+  .ai-flow-step { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-sm); padding: 16px 20px; flex: 1; min-width: 140px; }
+  .ai-flow-step .ai-step-pct { font-size: 22px; font-weight: 600; color: var(--accent); }
+  .ai-flow-step .ai-step-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; }
+  .ai-flow-arrow { color: rgba(255,255,255,0.3); font-size: 20px; padding: 0 12px; flex-shrink: 0; }
+  .ai-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+  .ai-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 22px; display: flex; gap: 16px; }
+  .ai-card-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(0,180,216,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ai-card h3 { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+  .ai-card p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+  /* PRICING */
+  .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .price-card { background: var(--white); border-radius: var(--radius); padding: 32px; border: 1.5px solid rgba(21,101,192,0.1); position: relative; transition: all .2s; }
+  .price-card:hover { box-shadow: var(--shadow-md); }
+  .price-card.featured { border: 2px solid var(--blue); }
+  .price-popular { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--blue); color: white; font-size: 12px; font-weight: 600; padding: 4px 18px; border-radius: 20px; white-space: nowrap; }
+  .price-tier { font-size: 13px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .price-amount { font-size: 42px; font-weight: 700; color: var(--navy); font-family: 'DM Serif Display', serif; }
+  .price-amount sub { font-size: 16px; font-weight: 400; color: var(--gray-600); font-family: 'DM Sans', sans-serif; }
+  .price-amount sup { font-size: 20px; }
+  .price-period { font-size: 13px; color: var(--gray-400); margin-bottom: 8px; }
+  .price-desc { font-size: 13px; color: var(--gray-600); padding-bottom: 20px; border-bottom: 1px solid var(--gray-200); margin-bottom: 20px; }
+  .price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .price-features li { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: var(--gray-600); }
+  .price-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .price-card .btn-primary, .price-card .btn-outline { width: 100%; text-align: center; display: block; padding: 12px; font-size: 14px; }
+
+  /* ABOUT */
+  .about-bg { background: var(--gray-100); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+  .about-badge { display: flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid rgba(21,101,192,0.12); border-radius: 8px; padding: 10px 16px; font-size: 13px; color: var(--gray-600); font-weight: 500; }
+  .about-badge .flag { font-size: 16px; }
+  .about-visual { background: var(--navy); border-radius: var(--radius); padding: 36px; color: white; }
+  .about-visual h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: white; margin-bottom: 24px; }
+  .about-stat-row { display: flex; gap: 16px; margin-bottom: 16px; }
+  .about-stat-box { flex: 1; background: rgba(255,255,255,0.07); border-radius: 8px; padding: 16px; text-align: center; }
+  .about-stat-box .num { font-size: 26px; font-weight: 700; color: var(--accent); }
+  .about-stat-box .lbl { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+  .about-expertise { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .expertise-tag { background: rgba(0,180,216,0.15); color: var(--accent); font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+
+  /* CTA */
+  .cta-section { background: linear-gradient(135deg, var(--navy) 0%, #1565C0 100%); text-align: center; }
+  .cta-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(28px,3.5vw,44px); color: white; margin-bottom: 16px; }
+  .cta-section p { font-size: 16px; color: rgba(255,255,255,0.75); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; font-weight: 300; }
+  .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: white; color: var(--blue); padding: 14px 28px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; text-decoration: none; transition: all .2s; display: inline-block; }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .btn-ghost { background: transparent; color: white; padding: 14px 28px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.4); transition: all .2s; display: inline-block; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+  /* FOOTER */
+  footer { background: var(--gray-900); padding: 60px 5% 32px; color: rgba(255,255,255,0.7); }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand h3 { font-size: 18px; font-weight: 600; color: white; margin-bottom: 12px; }
+  .footer-brand h3 span { color: var(--accent); }
+  .footer-brand p { font-size: 14px; line-height: 1.8; }
+  .footer-col h4 { font-size: 13px; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 10px; transition: color .2s; }
+  .footer-col a:hover { color: var(--accent); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+
+  /* CHAT WIDGET */
+  .chat-widget { position: fixed; bottom: 28px; right: 28px; z-index: 999; }
+  .chat-btn { width: 56px; height: 56px; border-radius: 50%; background: var(--blue); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(21,101,192,0.4); transition: all .2s; font-size: 22px; }
+  .chat-btn:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(21,101,192,0.5); }
+  .chat-panel { position: absolute; bottom: 68px; right: 0; width: 320px; background: white; border-radius: var(--radius); box-shadow: 0 12px 48px rgba(10,31,68,0.18); display: none; overflow: hidden; border: 1px solid rgba(21,101,192,0.12); }
+  .chat-panel.open { display: block; }
+  .chat-header { background: var(--navy); padding: 16px 18px; display: flex; align-items: center; gap: 10px; }
+  .chat-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .chat-header-info h4 { font-size: 13px; font-weight: 600; color: white; }
+  .chat-header-info p { font-size: 11px; color: rgba(255,255,255,0.6); }
+  .chat-messages { padding: 16px; height: 220px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+  .chat-msg { max-width: 80%; font-size: 13px; line-height: 1.6; }
+  .chat-msg.bot { background: var(--gray-100); padding: 10px 13px; border-radius: 12px 12px 12px 2px; color: var(--gray-900); }
+  .chat-msg.user { background: var(--blue); padding: 10px 13px; border-radius: 12px 12px 2px 12px; color: white; align-self: flex-end; }
+  .chat-quick { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 12px; }
+  .chat-quick-btn { font-size: 12px; border: 1px solid rgba(21,101,192,0.25); border-radius: 14px; padding: 5px 11px; color: var(--blue); background: var(--blue-pale); cursor: pointer; transition: all .15s; white-space: nowrap; }
+  .chat-quick-btn:hover { background: var(--blue); color: white; }
+  .chat-input-row { display: flex; gap: 8px; padding: 10px 16px 14px; border-top: 1px solid var(--gray-200); }
+  .chat-input-row input { flex: 1; border: 1px solid var(--gray-200); border-radius: 20px; padding: 8px 14px; font-size: 13px; outline: none; font-family: 'DM Sans', sans-serif; color: var(--gray-900); }
+  .chat-input-row input:focus { border-color: var(--blue); }
+  .chat-send { background: var(--blue); border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+  .chat-send svg { width: 14px; height: 14px; fill: white; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { display: none; }
+    .services-grid, .how-grid { grid-template-columns: repeat(2,1fr); }
+    .stats-inner { grid-template-columns: repeat(2,1fr); }
+    .stat-box { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 20px 0; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .ai-cards { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 64px 5%; }
+    .services-grid, .how-grid, .stats-inner { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .how-grid::before { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 36 36" fill="none">
+      <rect width="36" height="36" rx="9" fill="#1565C0"/>
+      <circle cx="9" cy="18" r="3.5" fill="white" opacity=".9"/>
+      <circle cx="27" cy="18" r="3.5" fill="white" opacity=".9"/>
+      <circle cx="18" cy="10" r="3.5" fill="white"/>
+      <circle cx="18" cy="26" r="3.5" fill="white"/>
+      <line x1="9" y1="18" x2="18" y2="10" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="9" y1="18" x2="18" y2="26" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="27" y1="18" x2="18" y2="10" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="27" y1="18" x2="18" y2="26" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="9" y1="18" x2="27" y2="18" stroke="white" stroke-width="1.5" stroke-dasharray="2.5 2.5" opacity=".4"/>
+    </svg>
+    <span class="nav-logo-text">Trident <span>CloudNet</span> Solutions</span>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav-cta">Free audit →</a>
+  </div>
+  <div class="nav-hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Now serving US &amp; India-based clients
+      </div>
+      <h1>Cloud. Network. AI. <em>Unified.</em></h1>
+      <p class="hero-sub">24/7 network, cloud &amp; helpdesk support — powered by AI triage and expert engineers across the US and India. Enterprise quality, SMB pricing.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Get a free network audit →</a>
+        <a href="#how" class="btn-outline">See how it works</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-flag-chip"><span class="flag">🇺🇸</span> US engineers</div>
+        <span class="hero-divider">·</span>
+        <div class="hero-flag-chip"><span class="flag">🇮🇳</span> India team</div>
+        <span class="hero-divider">·</span>
+        <div class="hero-flag-chip">🤖 AI-powered triage</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-float2">
+        <div class="float-text">✓ Ticket resolved</div>
+        <div class="float-sub">by AI in 47 seconds</div>
+      </div>
+      <div class="hero-card-main">
+        <h3>Live ticket queue</h3>
+        <div class="ticket-item">
+          <div class="ticket-dot dot-green"></div>
+          <div class="ticket-info">
+            <div class="ticket-title">VPN connectivity issue – HQ</div>
+            <div class="ticket-sub">2 min ago · L1</div>
+          </div>
+          <span class="ticket-badge badge-ai">AI resolved</span>
+        </div>
+        <div class="ticket-item">
+          <div class="ticket-dot dot-blue"></div>
+          <div class="ticket-info">
+            <div class="ticket-title">AWS cost spike – production</div>
+            <div class="ticket-sub">18 min ago · L3</div>
+          </div>
+          <span class="ticket-badge badge-human">Engineer on it</span>
+        </div>
+        <div class="ticket-item">
+          <div class="ticket-dot dot-orange"></div>
+          <div class="ticket-info">
+            <div class="ticket-title">Network latency alert – DC2</div>
+            <div class="ticket-sub">34 min ago · L2</div>
+          </div>
+          <span class="ticket-badge badge-open">India team</span>
+        </div>
+        <div class="ticket-item">
+          <div class="ticket-dot dot-green"></div>
+          <div class="ticket-info">
+            <div class="ticket-title">Email server timeout</div>
+            <div class="ticket-sub">1 hr ago · L1</div>
+          </div>
+          <span class="ticket-badge badge-ai">AI resolved</span>
+        </div>
+      </div>
+      <div class="hero-card-float">
+        <div class="stat-num">99.7%</div>
+        <div class="stat-label">Avg. client uptime</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-box"><div class="stat-box-num">24/7</div><div class="stat-box-label">Coverage across time zones</div></div>
+    <div class="stat-box"><div class="stat-box-num">&lt;30m</div><div class="stat-box-label">Enterprise response SLA</div></div>
+    <div class="stat-box"><div class="stat-box-num">~40%</div><div class="stat-box-label">Tickets resolved by AI</div></div>
+    <div class="stat-box"><div class="stat-box-num">3×</div><div class="stat-box-label">Faster than in-house IT</div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <div class="section-eyebrow">What we do</div>
+    <h2 class="section-title">End-to-end IT operations, covered</h2>
+    <p class="section-sub">From monitoring to incident response, we cover every layer of your IT with a team that grows with you.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon" style="background:#E3F0FF">
+          <svg width="20" height="20" fill="none" stroke="#1565C0" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Network monitoring</h3>
+        <p>24/7 uptime and performance monitoring with AI-powered alert triage and instant escalation to your team.</p>
+        <span class="service-tag" style="background:#E3F0FF;color:#1565C0">Always on</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#E8F5E9">
+          <svg width="20" height="20" fill="none" stroke="#2e7d32" stroke-width="2" viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+        </div>
+        <h3>Cloud operations</h3>
+        <p>AWS, Azure, and GCP management including cost optimization, architecture review, and day-to-day cloud ops.</p>
+        <span class="service-tag" style="background:#E8F5E9;color:#2e7d32">Multi-cloud</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#FFF3E0">
+          <svg width="20" height="20" fill="none" stroke="#e65100" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>AI-powered helpdesk</h3>
+        <p>Our chatbot resolves ~40% of tickets instantly. Everything else goes to our India or US engineers within minutes.</p>
+        <span class="service-tag" style="background:#FFF3E0;color:#e65100">AI-first</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#F3E5F5">
+          <svg width="20" height="20" fill="none" stroke="#6a1b9a" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Staff augmentation</h3>
+        <p>Place skilled engineers — L1 to L3 — from the US or India at your site or remote. Short or long-term engagements.</p>
+        <span class="service-tag" style="background:#F3E5F5;color:#6a1b9a">Flexible</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#FCE4EC">
+          <svg width="20" height="20" fill="none" stroke="#c62828" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>Incident response</h3>
+        <p>On-call retainer with full time-zone coverage. We're there when things break — with a guaranteed fast response.</p>
+        <span class="service-tag" style="background:#FCE4EC;color:#c62828">On-call</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#E0F7FA">
+          <svg width="20" height="20" fill="none" stroke="#00838f" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>DevOps &amp; automation</h3>
+        <p>CI/CD pipelines, IaC with Terraform, Kubernetes, and automation setup to modernize your ops stack.</p>
+        <span class="service-tag" style="background:#E0F7FA;color:#00838f">Modern stack</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <div class="section-eyebrow">How it works</div>
+    <h2 class="section-title">AI handles the noise.<br>Humans handle the rest.</h2>
+    <p class="section-sub">Our hybrid model gives you instant AI response plus deep human expertise — without the cost of both separately.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <h3>Issue comes in</h3>
+        <p>Via email, phone, or your client portal. Logged instantly into our ticketing system with full context captured.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <h3>AI triages</h3>
+        <p>Classifies priority, attempts auto-resolution for known patterns, and routes unresolved issues to the right team.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <h3>Human escalation</h3>
+        <p>India team covers overnight hours. US team covers business hours. All complex issues go to senior engineers.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <h3>You get a report</h3>
+        <p>AI-generated weekly health summaries — uptime, ticket volume, trends — delivered to your inbox automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI STACK -->
+<section class="ai-bg">
+  <div class="section-inner">
+    <div class="section-eyebrow">AI-powered</div>
+    <h2 class="section-title">Built on a smart AI stack</h2>
+    <p class="section-sub">We use AI to do the heavy lifting so our humans can focus on what truly needs expertise.</p>
+    <div class="ai-flow">
+      <div class="ai-flow-step">
+        <div class="ai-step-pct">100%</div>
+        <div class="ai-step-label">Tickets logged &amp; classified by AI</div>
+      </div>
+      <div class="ai-flow-arrow">→</div>
+      <div class="ai-flow-step">
+        <div class="ai-step-pct">~40%</div>
+        <div class="ai-step-label">Auto-resolved by chatbot</div>
+      </div>
+      <div class="ai-flow-arrow">→</div>
+      <div class="ai-flow-step">
+        <div class="ai-step-pct">~45%</div>
+        <div class="ai-step-label">Handled by India/US L1–L2</div>
+      </div>
+      <div class="ai-flow-arrow">→</div>
+      <div class="ai-flow-step">
+        <div class="ai-step-pct">~15%</div>
+        <div class="ai-step-label">Escalated to L3 senior engineers</div>
+      </div>
+    </div>
+    <div class="ai-cards">
+      <div class="ai-card">
+        <div class="ai-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#00B4D8" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div>
+          <h3>AI chatbot (L1 automation)</h3>
+          <p>Resolves ~40% of tickets without human involvement. Available 24/7 on your client portal.</p>
+        </div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#00B4D8" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <h3>Smart alert triage</h3>
+          <p>Converts monitoring noise into clear prioritized action items before humans even see them.</p>
+        </div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#00B4D8" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div>
+          <h3>Auto-generated health reports</h3>
+          <p>Weekly AI-written environment summaries delivered to your inbox — no manual work required.</p>
+        </div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#00B4D8" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+        </div>
+        <div>
+          <h3>Runbook automation</h3>
+          <p>AI executes standard fix scripts automatically before escalating, cutting resolution time dramatically.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-title">Simple, transparent plans</h2>
+    <p class="section-sub">No hidden fees. No long-term lock-in. Start small and scale as you grow.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">Starter</div>
+        <div class="price-amount"><sup>$</sup>1,499</div>
+        <div class="price-period">per month</div>
+        <div class="price-desc">Up to 25 users · Business hours support</div>
+        <ul class="price-features">
+          <li>AI helpdesk chatbot</li>
+          <li>L1/L2 India team support</li>
+          <li>Network uptime monitoring</li>
+          <li>Monthly health report</li>
+          <li>4-hour response SLA</li>
+          <li>Email &amp; portal ticketing</li>
+        </ul>
+        <a href="#contact" class="btn-outline">Get started</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-popular">Most popular</div>
+        <div class="price-tier">Growth</div>
+        <div class="price-amount"><sup>$</sup>3,499</div>
+        <div class="price-period">per month</div>
+        <div class="price-desc">Up to 75 users · 16/7 coverage</div>
+        <ul class="price-features">
+          <li>Everything in Starter</li>
+          <li>L3 senior engineer access</li>
+          <li>Cloud infrastructure support</li>
+          <li>Weekly health report</li>
+          <li>2-hour response SLA</li>
+          <li>Incident response coverage</li>
+        </ul>
+        <a href="#contact" class="btn-primary">Get started</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Enterprise</div>
+        <div class="price-amount"><sup>$</sup>7,999</div>
+        <div class="price-period">per month</div>
+        <div class="price-desc">Unlimited users · 24/7 full coverage</div>
+        <ul class="price-features">
+          <li>Everything in Growth</li>
+          <li>Dedicated account manager</li>
+          <li>Staff augmentation credits</li>
+          <li>Custom SLAs &amp; reporting</li>
+          <li>30-minute response SLA</li>
+          <li>White-glove onboarding</li>
+        </ul>
+        <a href="#contact" class="btn-outline">Contact us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-bg" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-eyebrow">About us</div>
+        <h2 class="section-title">Built by engineers, for businesses</h2>
+        <p style="font-size:15px;color:#4A5568;line-height:1.8;font-weight:300">Trident CloudNet Solutions was founded by a senior engineer with hands-on experience across networking, cloud infrastructure, software development, and IT operations. We built this company because we saw businesses overpaying for slow, generic IT support.</p>
+        <p style="font-size:15px;color:#4A5568;line-height:1.8;margin-top:16px;font-weight:300">Our model is different: AI handles the repetitive noise, our India team provides cost-effective 24/7 coverage, and our US engineers bring senior-level expertise when it matters most. You get enterprise-quality support without the enterprise price tag.</p>
+        <div class="about-badges">
+          <div class="about-badge"><span class="flag">🇺🇸</span> US-based senior engineers</div>
+          <div class="about-badge"><span class="flag">🇮🇳</span> India L1/L2 team</div>
+          <div class="about-badge">🤖 AI-first tools</div>
+          <div class="about-badge">☁️ Cloud certified</div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <h3>Our expertise</h3>
+        <div class="about-stat-row">
+          <div class="about-stat-box"><div class="num">10+</div><div class="lbl">Yrs networking</div></div>
+          <div class="about-stat-box"><div class="num">AWS</div><div class="lbl">Azure · GCP</div></div>
+          <div class="about-stat-box"><div class="num">L1–L3</div><div class="lbl">Full stack support</div></div>
+        </div>
+        <div class="about-expertise">
+          <span class="expertise-tag">Cisco / Juniper</span>
+          <span class="expertise-tag">AWS / Azure / GCP</span>
+          <span class="expertise-tag">Kubernetes</span>
+          <span class="expertise-tag">Terraform</span>
+          <span class="expertise-tag">Python / Bash</span>
+          <span class="expertise-tag">CI/CD pipelines</span>
+          <span class="expertise-tag">PagerDuty</span>
+          <span class="expertise-tag">Datadog</span>
+          <span class="expertise-tag">Linux / Windows</span>
+          <span class="expertise-tag">ITSM / ITIL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-eyebrow" style="color:#00B4D8">Get started</div>
+    <h2>Ready to bridge the gap<br>in your IT support?</h2>
+    <p>Get a free 30-minute network audit with one of our senior engineers. We'll identify gaps and show you exactly how we can help. No commitment required.</p>
+    <div class="cta-btns">
+      <a href="mailto:hello@tridentcloudnet.com" class="btn-white">Book your free audit →</a>
+      <a href="tel:+1-800-BRIDGENET" class="btn-ghost">Call us today</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Trident <span>CloudNet</span> Solutions</h3>
+        <p>Smart IT support for growing businesses. Human expertise meets AI efficiency — across the US and India, around the clock.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Network monitoring</a>
+        <a href="#services">Cloud operations</a>
+        <a href="#services">AI helpdesk</a>
+        <a href="#services">Staff augmentation</a>
+        <a href="#services">Incident response</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About us</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@tridentcloudnet.com">hello@tridentcloudnet.com</a>
+        <a href="tel:+18005555555">+1 (800) 555-5555</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter / X</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Trident CloudNet Solutions. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div class="chat-header-info">
+        <h4>Trident CloudNet AI Support</h4>
+        <p>Typically replies in seconds</p>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">Hi! I'm the Trident CloudNet AI assistant. How can I help you today? 👋</div>
+      <div class="chat-msg bot">I can answer questions about our services, pricing, or set up a free network audit call.</div>
+    </div>
+    <div class="chat-quick" id="quickBtns">
+      <button class="chat-quick-btn" onclick="quickMsg('What services do you offer?')">Services</button>
+      <button class="chat-quick-btn" onclick="quickMsg('What is your pricing?')">Pricing</button>
+      <button class="chat-quick-btn" onclick="quickMsg('Book a free audit')">Free audit</button>
+      <button class="chat-quick-btn" onclick="quickMsg('Do you offer staff augmentation?')">Staffing</button>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="handleKey(event)"/>
+      <button class="chat-send" onclick="sendMsg()">
+        <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-btn" onclick="toggleChat()" id="chatBtn" title="Chat with us">💬</button>
+</div>
+
+<script>
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = '';
+    } else {
+      links.style.display = 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '68px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = 'white';
+      links.style.padding = '20px 5%';
+      links.style.borderBottom = '1px solid #eee';
+      links.style.zIndex = '99';
+    }
+  }
+
+  function toggleChat() {
+    const panel = document.getElementById('chatPanel');
+    panel.classList.toggle('open');
+  }
+
+  const responses = {
+    'services': 'We offer: Network Monitoring, Cloud Operations (AWS/Azure/GCP), AI-powered Helpdesk, Staff Augmentation (US & India), Incident Response, and DevOps automation.',
+    'pricing': 'Our plans start at $1,499/mo (Starter), $3,499/mo (Growth), and $7,999/mo (Enterprise). All include AI helpdesk + human support. Want to see full details?',
+    'audit': "Great! A free 30-minute network audit with one of our senior engineers. Email us at hello@tridentcloudnet.com or I can have someone reach out to you. What's your name?",
+    'staffing': 'Yes! We place engineers from India ($28–$38/hr) or the US ($65–$95/hr). L1 to L3, short or long-term. What kind of role are you looking to fill?',
+    'default': "Thanks for reaching out! For detailed questions, our team is available at hello@tridentcloudnet.com. You can also book a free audit call to chat with a senior engineer directly."
+  };
+
+  function getResponse(msg) {
+    msg = msg.toLowerCase();
+    if (msg.includes('service') || msg.includes('offer') || msg.includes('what do')) return responses.services;
+    if (msg.includes('pric') || msg.includes('cost') || msg.includes('plan')) return responses.pricing;
+    if (msg.includes('audit') || msg.includes('book') || msg.includes('call') || msg.includes('free')) return responses.audit;
+    if (msg.includes('staff') || msg.includes('augment') || msg.includes('engineer') || msg.includes('hire')) return responses.staffing;
+    return responses.default;
+  }
+
+  function addMsg(text, type) {
+    const msgs = document.getElementById('chatMessages');
+    const div = document.createElement('div');
+    div.className = 'chat-msg ' + type;
+    div.textContent = text;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function quickMsg(text) {
+    document.getElementById('quickBtns').style.display = 'none';
+    addMsg(text, 'user');
+    setTimeout(() => addMsg(getResponse(text), 'bot'), 600);
+  }
+
+  function sendMsg() {
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    if (!text) return;
+    document.getElementById('quickBtns').style.display = 'none';
+    addMsg(text, 'user');
+    input.value = '';
+    setTimeout(() => addMsg(getResponse(text), 'bot'), 700);
+  }
+
+  function handleKey(e) { if (e.key === 'Enter') sendMsg(); }
+</script>
+</body>
+</html>
