@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Services – Trident CloudNet Solutions</title>
-<meta name="description" content="Comprehensive IT services: network monitoring, cloud operations, AI helpdesk, staff augmentation, incident response, DevOps (CI/CD, IaC, Kubernetes, DevSecOps, SRE), and testing services — application testing and datacom/network device testing, manual and automated."/>
+<meta name="description" content="Comprehensive IT operations and professional testing services: network monitoring, cloud operations, AI-assisted helpdesk, staff augmentation, incident response, application testing, and datacom/network device testing."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="css/styles.css"/>
@@ -29,10 +29,11 @@
     <span class="nav-logo-text">Trident <span>CloudNet</span> Solutions</span>
   </a>
   <div class="nav-links">
-    <a href="services.html" class="active">Services</a>
-    <a href="index.html#how">How it works</a>
+    <a href="operation-support.html">Operation Support</a>
+    <a href="product-testing.html">Product Testing</a>
     <a href="pricing.html">Pricing</a>
     <a href="about.html">About</a>
+    <a href="contact.html">Contact Us</a>
     <a href="contact.html" class="nav-cta">Free audit →</a>
   </div>
   <div class="nav-hamburger" onclick="toggleMenu()">
@@ -45,7 +46,7 @@
   <div class="page-hero-inner">
     <div class="eyebrow">What we do</div>
     <h1>IT services built for the modern enterprise</h1>
-    <p>Six core practice areas — from 24/7 monitoring to full cloud ops — delivered by AI and senior engineers across the US and India.</p>
+    <p>Six practice areas across two service lines: managed IT operations for businesses, and project-based testing for software and network products.</p>
   </div>
 </div>
 
@@ -54,7 +55,7 @@
   <div class="breadcrumb-inner">
     <a href="index.html">Home</a>
     <span>›</span>
-    <span>Services</span>
+    <span>Service Lines</span>
   </div>
 </div>
 
@@ -65,21 +66,21 @@
       <div>
         <div class="section-eyebrow">Service 01</div>
         <h2 class="section-title">Network monitoring &amp; management</h2>
-        <p style="font-size:15px;color:#4A5568;line-height:1.8;font-weight:300;margin-bottom:24px">We deploy agents across your entire network — routers, switches, firewalls, servers — and monitor every connection in real time. Our AI baseline-learns your traffic, so it knows the difference between normal and an actual threat or failure.</p>
+        <p style="font-size:15px;color:#4A5568;line-height:1.8;font-weight:300;margin-bottom:24px">We register and monitor routers, switches, firewalls, Linux hosts, and cloud network edges through Trident ChatOps. Engineers can ask plain-English questions, run diagnostics, and see alerts without opening separate SSH sessions or memorizing CLI syntax.</p>
         <ul class="service-features" style="margin-bottom:24px">
           <li>24/7 uptime monitoring across all network devices</li>
-          <li>AI-powered alert noise reduction (no false-positive fatigue)</li>
-          <li>Bandwidth analysis and capacity planning reports</li>
+          <li>Trident ChatOps natural-language queries for BGP, OSPF, interface, route, ping, and traceroute checks</li>
+          <li>Background monitoring with alerts for interface failures and routing session drops</li>
           <li>BGP, OSPF, MPLS route monitoring</li>
           <li>Firewall rule audits and configuration drift detection</li>
-          <li>Monthly executive network health reports</li>
+          <li>Monthly health reports with recurring issues, risks, and next actions</li>
         </ul>
         <div class="service-tools">
           <span class="tool-tag">Cisco / Juniper / Aruba</span>
-          <span class="tool-tag">PRTG</span>
-          <span class="tool-tag">Datadog</span>
-          <span class="tool-tag">Zabbix</span>
-          <span class="tool-tag">SolarWinds</span>
+          <span class="tool-tag">Trident ChatOps</span>
+          <span class="tool-tag">SSH / REST API</span>
+          <span class="tool-tag">Slack</span>
+          <span class="tool-tag">PagerDuty</span>
           <span class="tool-tag">pfSense</span>
         </div>
       </div>
@@ -123,7 +124,7 @@
           </div>
           <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center">
             <div style="font-size:14px;font-weight:500;color:white">Microsoft Azure</div>
-            <span style="font-size:12px;background:rgba(0,180,216,0.2);color:#00B4D8;padding:3px 10px;border-radius:10px">VMs, AKS, SQL, DevOps</span>
+            <span style="font-size:12px;background:rgba(0,180,216,0.2);color:#00B4D8;padding:3px 10px;border-radius:10px">VMs, AKS, SQL, VPC</span>
           </div>
           <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center">
             <div style="font-size:14px;font-weight:500;color:white">Google Cloud Platform</div>
@@ -144,7 +145,7 @@
         <p style="font-size:15px;color:#4A5568;line-height:1.8;font-weight:300;margin-bottom:24px">Managing cloud infrastructure is a full-time job. We handle AWS, Azure, and GCP day-to-day — provisioning, patching, cost control, and architecture — so your team can focus on building products instead of babysitting instances.</p>
         <ul class="service-features">
           <li>Multi-cloud infrastructure management and operations</li>
-          <li>Cloud cost analysis and FinOps optimization (avg. 20–35% savings)</li>
+          <li>Cloud cost analysis and FinOps optimization recommendations</li>
           <li>Security group, IAM policy, and compliance audits</li>
           <li>Cloud migration planning and execution</li>
           <li>Disaster recovery and backup strategy</li>
@@ -159,28 +160,28 @@
 <section id="helpdesk">
   <div class="section-inner">
     <div class="section-eyebrow">Service 03</div>
-    <h2 class="section-title" style="max-width:560px">AI-powered helpdesk that scales with your team</h2>
-    <p class="section-sub">Our hybrid helpdesk blends automation and human expertise — giving your users instant responses and escalating only what truly needs a human.</p>
+    <h2 class="section-title" style="max-width:560px">AI-assisted helpdesk that keeps humans in control</h2>
+    <p class="section-sub">The India L1/L2 team owns ticket response. Trident ChatOps supports engineers with device diagnostics, runbooks, and alert context without claiming the AI resolves tickets on its own.</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
       <div style="background:var(--gray-100);border-radius:var(--radius);padding:28px;text-align:center">
-        <div style="font-size:36px;font-weight:700;color:var(--blue);font-family:'DM Serif Display',serif;margin-bottom:6px">~40%</div>
-        <div style="font-size:14px;font-weight:500;color:var(--navy);margin-bottom:8px">Tickets auto-resolved</div>
-        <div style="font-size:13px;color:var(--gray-600)">AI handles password resets, VPN issues, software questions, and more — instantly.</div>
+        <div style="font-size:36px;font-weight:700;color:var(--blue);font-family:'DM Serif Display',serif;margin-bottom:6px">24/7</div>
+        <div style="font-size:14px;font-weight:500;color:var(--navy);margin-bottom:8px">Human ticket coverage</div>
+        <div style="font-size:13px;color:var(--gray-600)">India L1/L2 engineers handle email, phone, and portal tickets around the clock.</div>
       </div>
       <div style="background:var(--gray-100);border-radius:var(--radius);padding:28px;text-align:center">
         <div style="font-size:36px;font-weight:700;color:var(--blue);font-family:'DM Serif Display',serif;margin-bottom:6px">&lt;5m</div>
-        <div style="font-size:14px;font-weight:500;color:var(--navy);margin-bottom:8px">Human response time</div>
-        <div style="font-size:13px;color:var(--gray-600)">When AI can't resolve, a human engineer picks it up within minutes.</div>
+        <div style="font-size:14px;font-weight:500;color:var(--navy);margin-bottom:8px">Engineer response time</div>
+        <div style="font-size:13px;color:var(--gray-600)">Tickets are routed to engineers with context already captured where network diagnostics apply.</div>
       </div>
       <div style="background:var(--gray-100);border-radius:var(--radius);padding:28px;text-align:center">
         <div style="font-size:36px;font-weight:700;color:var(--blue);font-family:'DM Serif Display',serif;margin-bottom:6px">24/7</div>
         <div style="font-size:14px;font-weight:500;color:var(--navy);margin-bottom:8px">Always available</div>
-        <div style="font-size:13px;color:var(--gray-600)">AI is always on. Our India team covers nights. US team covers business hours.</div>
+        <div style="font-size:13px;color:var(--gray-600)">Trident ChatOps monitors devices continuously and gives engineers current network state.</div>
       </div>
     </div>
     <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
       <div style="background:var(--white);border:1px solid rgba(21,101,192,0.1);border-radius:var(--radius);padding:24px">
-        <h3 style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:12px">Common AI-resolved issues</h3>
+        <h3 style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:12px">Common engineer-handled issues</h3>
         <ul class="service-features">
           <li>Password resets and account unlocks</li>
           <li>VPN connection troubleshooting</li>
@@ -219,7 +220,6 @@
         <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
           <li style="font-size:13px;color:rgba(255,255,255,0.75);display:flex;gap:8px"><span style="color:var(--green)">✓</span> Senior networking (CCNP/CCIE level)</li>
           <li style="font-size:13px;color:rgba(255,255,255,0.75);display:flex;gap:8px"><span style="color:var(--green)">✓</span> Cloud architects (AWS/Azure certified)</li>
-          <li style="font-size:13px;color:rgba(255,255,255,0.75);display:flex;gap:8px"><span style="color:var(--green)">✓</span> DevOps &amp; SRE engineers</li>
           <li style="font-size:13px;color:rgba(255,255,255,0.75);display:flex;gap:8px"><span style="color:var(--green)">✓</span> Security specialists</li>
           <li style="font-size:13px;color:rgba(255,255,255,0.75);display:flex;gap:8px"><span style="color:var(--green)">✓</span> No long-term commitment required</li>
         </ul>
@@ -251,7 +251,7 @@
         <ul class="service-features">
           <li>Guaranteed 15–30 minute response SLA for P1/P2 incidents</li>
           <li>Senior L3 engineers dedicated to your account</li>
-          <li>Full time-zone coverage via US + India team</li>
+          <li>24/7 on-call coverage backed by India L1/L2 engineers and ChatOps diagnostics</li>
           <li>Post-incident root cause analysis (RCA) reports</li>
           <li>Runbook creation and continuous improvement</li>
           <li>Monthly incident review and trend analysis</li>
@@ -294,223 +294,12 @@
   </div>
 </section>
 
-<!-- SERVICE 6: DEVOPS -->
-<section id="devops" style="background:var(--gray-100)">
-  <div class="section-inner">
-    <div class="section-eyebrow">Service 06</div>
-    <h2 class="section-title">DevOps services — faster, safer, smarter delivery</h2>
-    <p class="section-sub">From CI/CD pipeline design to full SRE implementation — we embed DevOps practices, tooling, and automation deep into your engineering organisation.</p>
-
-    <!-- Outcome stats -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px">
-      <div style="background:var(--white);border-radius:var(--radius-sm);padding:20px 24px;text-align:center;border:1px solid rgba(21,101,192,0.08)">
-        <div style="font-size:32px;font-weight:700;color:var(--blue);font-family:'DM Serif Display',serif">10×</div>
-        <div style="font-size:13px;font-weight:500;color:var(--navy);margin-top:4px">Deployment frequency increase</div>
-        <div style="font-size:12px;color:var(--gray-400);margin-top:2px">Typical outcome after 6 months</div>
-      </div>
-      <div style="background:var(--white);border-radius:var(--radius-sm);padding:20px 24px;text-align:center;border:1px solid rgba(21,101,192,0.08)">
-        <div style="font-size:32px;font-weight:700;color:var(--blue);font-family:'DM Serif Display',serif">80%</div>
-        <div style="font-size:13px;font-weight:500;color:var(--navy);margin-top:4px">Reduction in manual release effort</div>
-        <div style="font-size:12px;color:var(--gray-400);margin-top:2px">Avg. across client engagements</div>
-      </div>
-      <div style="background:var(--white);border-radius:var(--radius-sm);padding:20px 24px;text-align:center;border:1px solid rgba(21,101,192,0.08)">
-        <div style="font-size:32px;font-weight:700;color:var(--blue);font-family:'DM Serif Display',serif">&lt;1hr</div>
-        <div style="font-size:13px;font-weight:500;color:var(--navy);margin-top:4px">Mean time to recovery (MTTR)</div>
-        <div style="font-size:12px;color:var(--gray-400);margin-top:2px">With proper observability in place</div>
-      </div>
-    </div>
-
-    <!-- 6 core DevOps service areas -->
-    <div class="services-grid" style="margin-bottom:48px">
-      <div class="service-card">
-        <div class="service-icon" style="background:#E0F7FA">
-          <svg width="20" height="20" fill="none" stroke="#00838f" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <h3>CI/CD pipeline engineering</h3>
-        <p>Design, build, and optimise end-to-end pipelines that automate testing, security scanning, and deployment with every commit.</p>
-        <ul class="service-features">
-          <li>Build, test &amp; deploy automation</li>
-          <li>Multi-environment promotion gates</li>
-          <li>Automated rollback on failure</li>
-          <li>Secret management integration</li>
-          <li>Pipeline-as-code (versioned in Git)</li>
-        </ul>
-        <div class="service-tools">
-          <span class="tool-tag">GitHub Actions</span>
-          <span class="tool-tag">GitLab CI</span>
-          <span class="tool-tag">Jenkins</span>
-          <span class="tool-tag">ArgoCD</span>
-          <span class="tool-tag">CircleCI</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon" style="background:#E3F0FF">
-          <svg width="20" height="20" fill="none" stroke="#1565C0" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-        </div>
-        <h3>Infrastructure as Code (IaC)</h3>
-        <p>Provision and manage your entire cloud environment with version-controlled IaC — repeatable, auditable, and drift-proof.</p>
-        <ul class="service-features">
-          <li>Cloud provisioning (AWS / Azure / GCP)</li>
-          <li>Modular, reusable Terraform modules</li>
-          <li>Configuration management at scale</li>
-          <li>State management &amp; drift detection</li>
-          <li>Policy-as-code enforcement (OPA)</li>
-        </ul>
-        <div class="service-tools">
-          <span class="tool-tag">Terraform</span>
-          <span class="tool-tag">Ansible</span>
-          <span class="tool-tag">Pulumi</span>
-          <span class="tool-tag">Chef</span>
-          <span class="tool-tag">Packer</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon" style="background:#F3E5F5">
-          <svg width="20" height="20" fill="none" stroke="#6a1b9a" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <h3>Kubernetes &amp; containers</h3>
-        <p>Containerise workloads, design production-grade K8s clusters, implement auto-scaling, and manage the full container lifecycle.</p>
-        <ul class="service-features">
-          <li>Docker image build &amp; registry management</li>
-          <li>EKS / AKS / GKE cluster management</li>
-          <li>Helm chart design &amp; maintenance</li>
-          <li>Horizontal &amp; vertical auto-scaling</li>
-          <li>Service mesh (Istio / Linkerd)</li>
-        </ul>
-        <div class="service-tools">
-          <span class="tool-tag">Kubernetes</span>
-          <span class="tool-tag">Docker</span>
-          <span class="tool-tag">Helm</span>
-          <span class="tool-tag">Istio</span>
-          <span class="tool-tag">Kustomize</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon" style="background:#E8F5E9">
-          <svg width="20" height="20" fill="none" stroke="#2e7d32" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Monitoring &amp; observability</h3>
-        <p>Full-stack observability — metrics, logs, traces — so you know what's happening in production before users ever notice.</p>
-        <ul class="service-features">
-          <li>Metrics, logs &amp; distributed tracing</li>
-          <li>Custom dashboards &amp; alerting rules</li>
-          <li>APM and service dependency maps</li>
-          <li>SLO / SLA monitoring &amp; reporting</li>
-          <li>On-call routing &amp; escalation setup</li>
-        </ul>
-        <div class="service-tools">
-          <span class="tool-tag">Datadog</span>
-          <span class="tool-tag">Prometheus</span>
-          <span class="tool-tag">Grafana</span>
-          <span class="tool-tag">OpenTelemetry</span>
-          <span class="tool-tag">PagerDuty</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon" style="background:#FCE4EC">
-          <svg width="20" height="20" fill="none" stroke="#c62828" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>DevSecOps</h3>
-        <p>Shift security left — embed automated scanning, compliance checks, and secret detection directly into every pipeline stage.</p>
-        <ul class="service-features">
-          <li>SAST / DAST scanning in CI pipelines</li>
-          <li>Container image vulnerability scanning</li>
-          <li>Secrets &amp; credential leak detection</li>
-          <li>CIS benchmark enforcement</li>
-          <li>SOC 2 / HIPAA / PCI compliance automation</li>
-        </ul>
-        <div class="service-tools">
-          <span class="tool-tag">Checkov</span>
-          <span class="tool-tag">Snyk</span>
-          <span class="tool-tag">Trivy</span>
-          <span class="tool-tag">HashiCorp Vault</span>
-          <span class="tool-tag">Wiz</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon" style="background:#FFF3E0">
-          <svg width="20" height="20" fill="none" stroke="#e65100" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-        </div>
-        <h3>Site Reliability Engineering (SRE)</h3>
-        <p>Define SLOs, implement error budgets, build runbooks, and apply SRE principles to improve system reliability at scale.</p>
-        <ul class="service-features">
-          <li>SLI / SLO / error budget definition</li>
-          <li>Runbook creation &amp; automation</li>
-          <li>Capacity planning &amp; load testing</li>
-          <li>Chaos engineering &amp; resilience testing</li>
-          <li>Post-incident review &amp; blameless culture</li>
-        </ul>
-        <div class="service-tools">
-          <span class="tool-tag">PagerDuty</span>
-          <span class="tool-tag">Chaos Monkey</span>
-          <span class="tool-tag">k6 / Gatling</span>
-          <span class="tool-tag">Backstage</span>
-          <span class="tool-tag">OpsGenie</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- DevOps toolchain ecosystem -->
-    <div style="background:var(--navy);border-radius:var(--radius);padding:36px">
-      <h3 style="font-family:'DM Serif Display',serif;font-size:22px;color:white;margin-bottom:8px">Our DevOps toolchain</h3>
-      <p style="font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:28px">We work with the tools your team already uses — and recommend the right additions for where you're headed.</p>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
-        <div style="background:rgba(255,255,255,0.07);border-radius:var(--radius-sm);padding:16px 18px">
-          <div style="font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Source &amp; CI/CD</div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">GitHub / GitLab / Bitbucket</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">GitHub Actions</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Jenkins / CircleCI</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">ArgoCD / Flux</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Tekton</span>
-          </div>
-        </div>
-        <div style="background:rgba(255,255,255,0.07);border-radius:var(--radius-sm);padding:16px 18px">
-          <div style="font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">IaC &amp; containers</div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Terraform / Pulumi</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Ansible / Chef</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Docker / Podman</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Kubernetes / Helm</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Packer / Vagrant</span>
-          </div>
-        </div>
-        <div style="background:rgba(255,255,255,0.07);border-radius:var(--radius-sm);padding:16px 18px">
-          <div style="font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Observability</div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Datadog / New Relic</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Prometheus / Grafana</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">OpenTelemetry / Jaeger</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">ELK Stack / Loki</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">PagerDuty / OpsGenie</span>
-          </div>
-        </div>
-        <div style="background:rgba(255,255,255,0.07);border-radius:var(--radius-sm);padding:16px 18px">
-          <div style="font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Security &amp; compliance</div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Snyk / Trivy / Checkov</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">HashiCorp Vault</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">AWS IAM / RBAC</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">SonarQube / OWASP ZAP</span>
-            <span style="font-size:13px;color:rgba(255,255,255,0.8)">Open Policy Agent (OPA)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICE 7: TESTING SERVICES -->
+<!-- SERVICE 6: TESTING SERVICES -->
 <section id="testing">
   <div class="section-inner">
-    <div class="section-eyebrow">Service 07</div>
+    <div class="section-eyebrow">Service 06</div>
     <h2 class="section-title">Testing services — quality at every layer</h2>
-    <p class="section-sub">Validate your applications and network infrastructure with rigorous manual and automated testing — before issues ever reach production.</p>
+    <p class="section-sub">Project-based QA for software applications and network/datacom products: scoped, executed, and reported by specialist test engineers before release or deployment.</p>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px">
 
@@ -656,19 +445,22 @@
         <p>Smart IT support for growing businesses. Human expertise meets AI efficiency — across the US and India, around the clock.</p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
-        <a href="#network">Network monitoring</a>
-        <a href="#cloud">Cloud operations</a>
-        <a href="#helpdesk">AI helpdesk</a>
-        <a href="#staffing">Staff augmentation</a>
-        <a href="#incident">Incident response</a>
-        <a href="#devops">DevOps</a>
-        <a href="#testing">Testing services</a>
+        <h4>Operation Support</h4>
+        <a href="operation-support.html#chatops">Trident ChatOps</a>
+        <a href="operation-support.html#queries">Device queries</a>
+        <a href="operation-support.html#capabilities">Capabilities</a>
+        <a href="operation-support.html#deployment">Deployment</a>
+        <a href="operation-support.html#support-model">Support model</a>
+      </div>
+      <div class="footer-col">
+        <h4>Product Testing</h4>
+        <a href="product-testing.html#application">Application testing</a>
+        <a href="product-testing.html#datacom">Datacom testing</a>
+        <a href="product-testing.html#methodology">Methodology</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <a href="about.html">About us</a>
-        <a href="index.html#how">How it works</a>
         <a href="pricing.html">Pricing</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -693,8 +485,8 @@
     <div class="chat-header">
       <div class="chat-avatar">🤖</div>
       <div class="chat-header-info">
-        <h4>Trident CloudNet AI Support</h4>
-        <p>Typically replies in seconds</p>
+        <h4>Trident CloudNet Site Assistant</h4>
+        <p>Answers service questions</p>
       </div>
     </div>
     <div class="chat-messages" id="chatMessages">

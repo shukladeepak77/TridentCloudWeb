@@ -28,8 +28,8 @@ function toggleChat() {
 }
 
 const chatResponses = {
-  services: 'We offer: Network Monitoring, Cloud Operations (AWS/Azure/GCP), AI-powered Helpdesk, Staff Augmentation (US & India), Incident Response, and DevOps automation. <a href="services.html">View all services →</a>',
-  pricing: 'Plans start at $1,499/mo (Starter), $3,499/mo (Growth), and $7,999/mo (Enterprise). All include AI helpdesk + human support. <a href="pricing.html">See full pricing →</a>',
+  services: 'We offer two service lines: <a href="operation-support.html">Operation Support</a> for managed IT operations, and <a href="product-testing.html">Product Testing</a> for application QA plus datacom/network device testing.',
+  pricing: 'Plans start at $1,499/mo (Starter), $3,499/mo (Growth), and $7,999/mo (Enterprise). Plans include human support backed by Trident ChatOps diagnostics. <a href="pricing.html">See full pricing →</a>',
   audit: "Great! A free 30-minute network audit with a senior engineer. Email us at hello@tridentcloudnet.com or visit our contact page to book. <a href='contact.html'>Book now →</a>",
   staffing: 'Yes — we place engineers from India ($28–$38/hr) or the US ($65–$95/hr). L1 to L3, short or long-term. <a href="contact.html">Tell us what you need →</a>',
   default: "Thanks for reaching out! For detailed questions, visit <a href='contact.html'>our contact page</a> or email hello@tridentcloudnet.com."

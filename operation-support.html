@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trident ChatOps Operation Support - Trident CloudNet Solutions</title>
+<meta name="description" content="Trident ChatOps is a network operations platform for natural-language device queries, SSH-backed diagnostics, background monitoring, alerts, runbooks, and audit trails."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 36 36" fill="none">
+      <rect width="36" height="36" rx="9" fill="#1565C0"/>
+      <circle cx="9" cy="18" r="3.5" fill="white" opacity=".9"/>
+      <circle cx="27" cy="18" r="3.5" fill="white" opacity=".9"/>
+      <circle cx="18" cy="10" r="3.5" fill="white"/>
+      <circle cx="18" cy="26" r="3.5" fill="white"/>
+      <line x1="9" y1="18" x2="18" y2="10" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="9" y1="18" x2="18" y2="26" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="27" y1="18" x2="18" y2="10" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="27" y1="18" x2="18" y2="26" stroke="white" stroke-width="1.5" opacity=".55"/>
+      <line x1="9" y1="18" x2="27" y2="18" stroke="white" stroke-width="1.5" stroke-dasharray="2.5 2.5" opacity=".4"/>
+    </svg>
+    <span class="nav-logo-text">Trident <span>CloudNet</span> Solutions</span>
+  </a>
+  <div class="nav-links">
+    <a href="operation-support.html" class="active">Operation Support</a>
+    <a href="product-testing.html">Product Testing</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="contact.html" class="nav-cta">Free audit →</a>
+  </div>
+  <div class="nav-hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Trident ChatOps platform</div>
+    <h1>Network operations through a natural-language command center</h1>
+    <p>Query devices, inspect routing state, capture diagnostics, track alerts, and follow runbooks from one on-premise operations interface.</p>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span>&rsaquo;</span>
+    <span>Operation Support</span>
+  </div>
+</div>
+
+<section id="chatops" class="section-after-breadcrumb compact-section compact-bottom">
+  <div class="section-inner">
+    <div class="section-eyebrow">Product focus</div>
+    <h2 class="section-title">What Trident ChatOps does</h2>
+    <p class="section-sub">Trident ChatOps is built for NOC engineers, field technicians, and operations teams that need quick network answers without jumping between SSH terminals, monitoring dashboards, spreadsheets, ticket tools, and runbook wikis.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Natural-language device queries</h3>
+        <p>Ask for interface status, BGP neighbors, OSPF state, routing tables, ping, traceroute, config backup, or device inventory in plain English.</p>
+      </div>
+      <div class="service-card">
+        <h3>SSH-backed diagnostics</h3>
+        <p>ChatOps connects to registered Cisco, Arista, Juniper, and Linux devices, runs the correct command, and returns structured output.</p>
+      </div>
+      <div class="service-card">
+        <h3>Operational context in one place</h3>
+        <p>Alerts, device details, runbooks, command output, and ticket context stay in the same workflow so engineers do not start from scratch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="queries" class="compact-section compact-top compact-bottom" style="background:var(--gray-100)">
+  <div class="section-inner">
+    <div class="section-eyebrow prominent">Product workflow</div>
+    <h2 class="section-title">From question to device evidence</h2>
+    <p class="section-sub">The platform recognizes intent, maps the request to the right device operation, executes through SSH, formats the result, and keeps an audit trail.</p>
+    <div class="how-grid">
+      <div class="how-step"><div class="how-num">1</div><h3>Ask</h3><p>Example: "bgp neighbors for edge-router" or "show interfaces on branch-fw-01".</p></div>
+      <div class="how-step"><div class="how-num">2</div><h3>Route</h3><p>ChatOps identifies the intent, target device, vendor family, and command template.</p></div>
+      <div class="how-step"><div class="how-num">3</div><h3>Run</h3><p>The platform connects to the registered device and gathers the requested output.</p></div>
+      <div class="how-step"><div class="how-num">4</div><h3>Review</h3><p>Engineers see readable results, related alerts, and runbook guidance where configured.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities" class="compact-section compact-top compact-bottom">
+  <div class="section-inner">
+    <div class="section-eyebrow">Core functionality</div>
+    <h2 class="section-title">Network operations built into ChatOps</h2>
+    <p class="section-sub">The product is focused on practical NOC tasks: state checks, diagnostics, alert context, runbooks, and traceability.</p>
+    <div class="services-grid">
+      <div class="service-card"><h3>Interfaces and reachability</h3><p>Check interface state, descriptions, error counters, ping, traceroute, and basic path symptoms.</p></div>
+      <div class="service-card"><h3>Routing protocols</h3><p>Inspect BGP and OSPF neighbors, route tables, peer state, and session health indicators.</p></div>
+      <div class="service-card"><h3>Config and inventory context</h3><p>Keep device inventory, retrieve configuration context, and compare current state against expected operations notes.</p></div>
+      <div class="service-card"><h3>Alerts and acknowledgements</h3><p>Raise alerts for interface failures or routing-session drops, acknowledge them, and attach context to ticket workflows.</p></div>
+      <div class="service-card"><h3>Runbook access</h3><p>Give engineers the right operating procedure inside the same chat workflow.</p></div>
+      <div class="service-card"><h3>Audit trail</h3><p>Record who ran what, against which device, and when, so operational activity is reviewable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="deployment" class="compact-section compact-top compact-bottom" style="background:var(--gray-100)">
+  <div class="section-inner">
+    <div class="section-eyebrow">Deployment and integrations</div>
+    <h2 class="section-title">Designed for controlled environments</h2>
+    <p class="section-sub">Trident ChatOps runs on-premise or in a customer-controlled VM. Device credentials and inventory stay inside the client environment.</p>
+    <div class="services-grid">
+      <div class="service-card"><h3>On-premise application</h3><p>FastAPI-based deployment on Linux or a controlled cloud VM, with no required external SaaS dependency for structured network queries.</p></div>
+      <div class="service-card"><h3>Role-based access</h3><p>JWT authentication and role-based controls for engineers, operators, and administrators.</p></div>
+      <div class="service-card"><h3>Integrations</h3><p>Slack, PagerDuty, Datadog/webhook inputs, Prometheus metrics, and REST API access where configured.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="boundaries" class="compact-section compact-top compact-bottom" style="background:var(--navy)">
+  <div class="section-inner">
+    <div class="section-eyebrow" style="color:var(--accent)">Product boundaries</div>
+    <h2 class="section-title" style="color:white">What ChatOps is, and what it is not</h2>
+    <p class="section-sub on-dark">The product is a force multiplier for network operations. It assists engineers with evidence and workflows; it is not an autonomous engineer and does not silently change production networks.</p>
+    <div class="services-grid">
+      <div class="service-card"><h3>Does</h3><p>Query devices, parse command output, surface alerts, expose runbooks, create context for tickets, and maintain an audit trail.</p></div>
+      <div class="service-card"><h3>Does not</h3><p>Resolve tickets on its own, replace engineers, or make autonomous production configuration changes.</p></div>
+      <div class="service-card"><h3>Human approval stays central</h3><p>Configuration changes require explicit human action and client-approved operating procedures.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="support-model" class="compact-section compact-top">
+  <div class="section-inner">
+    <div class="section-eyebrow">Service layer</div>
+    <h2 class="section-title">How operation support uses the product</h2>
+    <p class="section-sub">After ChatOps is deployed and devices are registered, support workflows can include monitoring response, helpdesk coordination, cloud operations, staff augmentation, and incident response.</p>
+    <div class="services-grid">
+      <div class="service-card"><h3>Monitoring response</h3><p>Engineers review ChatOps alerts, device context, and runbooks before taking action.</p></div>
+      <div class="service-card"><h3>Helpdesk support</h3><p>Human teams own ticket response; ChatOps provides technical context when network diagnostics are relevant.</p></div>
+      <div class="service-card"><h3>Incident coordination</h3><p>Critical incidents receive structured summaries, supporting evidence, and follow-up actions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="section-eyebrow" style="color:#00B4D8">Get started</div>
+    <h2>Want to see what ChatOps can do?</h2>
+    <p>Book a walkthrough of the network operations workflow and device diagnostics model.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn-white">Book your free audit →</a>
+      <a href="pricing.html" class="btn-ghost">View pricing</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Trident <span>CloudNet</span> Solutions</h3>
+        <p>Trident ChatOps brings device diagnostics, alerts, runbooks, and operational context into one network operations workflow.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Operation Support</h4>
+        <a href="operation-support.html#chatops">Trident ChatOps</a>
+        <a href="operation-support.html#queries">Device queries</a>
+        <a href="operation-support.html#capabilities">Capabilities</a>
+        <a href="operation-support.html#deployment">Deployment</a>
+        <a href="operation-support.html#support-model">Support model</a>
+      </div>
+      <div class="footer-col">
+        <h4>Product Testing</h4>
+        <a href="product-testing.html#application">Application testing</a>
+        <a href="product-testing.html#datacom">Datacom testing</a>
+        <a href="product-testing.html#methodology">Methodology</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Trident CloudNet Solutions. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
